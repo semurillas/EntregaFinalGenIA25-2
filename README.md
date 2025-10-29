@@ -172,35 +172,34 @@ La lógica conversacional está implementada en [`agente_ecomarket.py`](agente_e
 
 ```mermaid
 flowchart TD
-A[Inicio de mensaje] --> B{¿Incluye referencia?}
-B -- No --> C[Solicitar número de pedido o identificación]
-C --> Z[Fin del turno]
+A[Inicio de mensaje] --> B{Incluye referencia?}
+B -- No --> C[Solicitar numero de pedido o identificacion]
+C --> Z[Fin]
 
-B -- Sí --> D[verificar_elegibilidad_devolucion()]
-D --> E{¿Pedido elegible?}
+B -- Si --> D[Llamar verificar_elegibilidad_devolucion]
+D --> E{Pedido elegible?}
 
 E -- No --> F[Notificar motivo y cerrar flujo]
 F --> Z
 
-E -- Sí --> G[Guardar id_devolucion en memoria]
-G --> H[Solicitar confirmación (sí/no)]
+E -- Si --> G[Guardar id_devolucion en memoria]
+G --> H[Pedir confirmacion: si o no]
 
 H --> I{Respuesta del usuario}
 
-I -- sí --> J[generar_etiqueta_devolucion() y procesar_reembolso()]
-J --> K[Confirmar devolución completada]
+I -- si --> J[Generar etiqueta y procesar reembolso]
+J --> K[Confirmar devolucion completada]
 K --> Z
 
-I -- no --> L[Cancelar devolución y limpiar memoria]
+I -- no --> L[Cancelar devolucion y limpiar memoria]
 L --> Z
 
-I -- otro --> M[Repetir solicitud de confirmación]
+I -- otro --> M[Repetir solicitud de confirmacion]
 M --> H
 
-A --> N{¿Está activo el flujo de devolución?}
-N -- No --> O[consultar_conocimiento_rag()]
+A --> N{Flujo de devolucion activo?}
+N -- No --> O[Llamar consultar_conocimiento_rag]
 O --> Z
-
 %% Estilos
 classDef start fill:#6ECB63,stroke:#2D7A3F,color:#ffffff,font-weight:bold;
 classDef decision fill:#F7EFAF,stroke:#B89500,color:#5C4B00,font-weight:bold;
