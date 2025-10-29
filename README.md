@@ -171,27 +171,44 @@ La lógica conversacional está implementada en [`agente_ecomarket.py`](agente_e
 
 
 ```mermaid
+%% Estilo ECO-MARKET ♻️
 flowchart TD
-    A[Inicio de mensaje] --> B{¿Incluye ID de pedido<br/>P-XXXX o nro_id?};
-    B -- No --> C[Responder con saludo y solicitar referencia<br/>sin usar herramientas];
-    C --> Z[Fin del turno];
-    B -- Sí --> D[Llamar verificar_elegibilidad_devolucion()<br/>herramientas_ecomarket];
-    D --> E{¿Pedido elegible?};
-    E -- No --> F[Responder motivo y cerrar flujo];
-    F --> Z;
-    E -- Sí --> G[Guardar id_devolucion en memoria<br/>EcomarketMemory.start_confirm];
-    G --> H[Pedir confirmación (sí/no)];
-    H --> I{Respuesta del usuario};
-    I -- "sí" --> J[Llamar generar_etiqueta_devolucion()<br/>y procesar_reembolso()];
-    J --> K[Enviar etiqueta + confirmación de reembolso];
-    I -- "no" --> L[Restablecer memoria y confirmar cancelación];
-    I -- Otro --> M[Repetir solicitud de confirmación];
-    K --> Z;
-    L --> Z;
-    M --> H;
-    H --> N{¿Llegan preguntas informativas y<br/>no hay confirmación pendiente?};
-    N -- Sí --> O[Llamar consultar_conocimiento_rag()<br/>para responder con contexto];
-    O --> Z;
+
+classDef start fill:#7CCF83,stroke:#2D7A3F,color:#ffffff,font-weight:bold;
+classDef action fill:#EAF8EC,stroke:#2D7A3F,color:#2D7A3F;
+classDef decision fill:#FFF8D6,stroke:#B89500,color:#5C4B00,font-weight:bold;
+classDef end fill:#D9E4DD,stroke:#6C8373,color:#2D3F35,font-weight:bold;
+
+A[Inicio de mensaje]:::start --> B{¿Incluye referencia?<br/>ID P-XXXX o nro_id}:::decision
+
+B -- No --> C[Responder saludo y pedir referencia]:::action
+C --> Z[Fin del turno]:::end
+
+B -- Sí --> D[Tool: verificar_elegibilidad_devolucion()]:::action
+D --> E{¿Pedido elegible?}:::decision
+
+E -- No --> F[Notificar razón y cerrar flujo]:::action
+F --> Z
+
+E -- Sí --> G[Guardar id_devolucion en memoria]:::action
+G --> H[Pedir confirmación (sí/no)]:::action
+
+H --> I{Respuesta del usuario}:::decision
+
+I -- sí --> J[Tool: generar_etiqueta_devolucion()\n+ procesar_reembolso()]:::action
+J --> K[Enviar etiqueta y confirmación]:::action
+K --> Z
+
+I -- no --> L[Cancelar devolución y limpiar memoria]:::action
+L --> Z
+
+I -- Otra --> M[Repetir solicitud de confirmación]:::action
+M --> H
+
+%% Consultas generales fuera del flujo de devolución
+A --> N{¿No se está procesando una devolución?}:::decision
+N -- Sí --> O[Tool: consultar_conocimiento_rag()]:::action
+O --> Z
 ```
 
 **Puntos clave del flujo:**
