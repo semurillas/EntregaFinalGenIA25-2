@@ -1,0 +1,15 @@
+# Virtual envs
+venv*/
+.env
+
+# Chroma DB and vectorstore
+chroma_db/
+chroma/
+vectorstore/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/

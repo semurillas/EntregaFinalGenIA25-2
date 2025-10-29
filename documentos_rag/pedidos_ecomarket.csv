@@ -1,0 +1,16 @@
+pedido_id,cliente,cantidad_productos,productos,estado,fecha_pedido,fecha_estimada_entrega,retrasado,tracking,direccion_entrega,ciudad
+1001,Juan Pérez,3,"Cepillo de bambú, Pasta dental ecológica, Toalla orgánica",En preparación,2025-09-20,2025-09-25,False,TRK1001,Calle 45 #10-23,Bogotá
+1002,Ana Gómez,2,"Botella ecológica, Bolsas reutilizables",Enviado,2025-09-21,2025-09-24,False,TRK1002,Carrera 9 #85-11,Medellín
+1003,Luis Rojas,4,"Detergente natural, Jabón orgánico, Desodorante ecológico, Esponja vegetal",Entregado,2025-09-18,2025-09-20,False,TRK1003,Carrera 50 #12-45,Cali
+1004,Marta Díaz,1,"Detergente natural",Cancelado,2025-09-19,,False,TRK1004,Calle 110 #23-56,Bogotá
+1005,Pedro Ramírez,5,"Jabón orgánico, Shampoo sólido, Crema hidratante natural, Cepillo de bambú, Desodorante ecológico",Enviado,2025-09-22,2025-09-26,True,TRK1005,Carrera 7 #45-20,Bucaramanga
+1006,Sofía Herrera,2,"Desodorante ecológico, Jabón orgánico",En preparación,2025-09-23,2025-09-27,False,TRK1006,Calle 72 #14-08,Cartagena
+1007,Andrés López,4,"Cepillo de bambú, Pasta dental ecológica, Hilo dental natural, Bálsamo labial",Enviado,2025-09-19,2025-09-23,False,TRK1007,Avenida Siempre Viva 123,Bogotá
+1008,Laura Torres,3,"Toallas de algodón orgánico, Shampoo sólido, Acondicionador sólido",Entregado,2025-09-17,2025-09-19,False,TRK1008,Carrera 25 #64-15,Pereira
+1009,Daniela Gómez,2,"Paquete de pajillas reutilizables, Botella ecológica",En preparación,2025-09-24,2025-09-28,False,TRK1009,Calle 12 #9-45,Cali
+1010,Carlos Ruiz,1,"Set de limpieza ecológica",Enviado,2025-09-21,2025-09-24,True,TRK1010,Carrera 33 #45-19,Barranquilla
+1011,Valentina Castro,3,"Shampoo sólido, Acondicionador sólido, Jabón orgánico",En preparación,2025-09-25,2025-09-30,False,TRK1011,Calle 5 #45-32,Medellín
+1012,David Martínez,1,"Crema hidratante natural",Enviado,2025-09-20,2025-09-25,False,TRK1012,Carrera 16 #88-10,Bogotá
+1013,Camila Rodríguez,2,"Bálsamo labial ecológico, Pasta dental ecológica",Entregado,2025-09-15,2025-09-18,False,TRK1013,Avenida 3 #22-90,Bucaramanga
+1014,Nicolás Peña,3,"Desinfectante natural, Jabón orgánico, Toalla ecológica",En preparación,2025-09-26,2025-10-01,False,TRK1014,Carrera 18 #34-17,Cali
+1015,Juliana Vega,2,"Kit de aseo sostenible, Botella ecológica",Enviado,2025-09-23,2025-09-28,True,TRK1015,Calle 44 #19-80,Bogotá

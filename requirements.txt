@@ -1,0 +1,22 @@
+# LangChain core + integrations
+langchain>=0.3.0,<0.4.0
+langchain-core>=0.3.0,<0.4.0
+langchain-community>=0.3.0,<0.4.0
+langchain-openai>=0.2.3,<0.4.0
+langchain-chroma>=0.1.2,<0.3.0
+
+# ChromaDB
+chromadb>=0.5.0,<0.6.0
+
+# OpenAI client
+openai>=1.0.0,<2.0.0
+
+# Frontend
+streamlit>=1.30.0,<2.0.0
+python-dotenv>=1.0.0,<2.0.0
+
+# Loaders / utils
+pypdf>=3.7.0
+pandas>=2.0.0
+unstructured>=0.10.0
+requests>=2.28.0

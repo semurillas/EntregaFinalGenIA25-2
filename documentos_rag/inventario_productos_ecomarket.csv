@@ -1,0 +1,25 @@
+producto_id,nombre,categoria,retornable,precio,stock,fecha_actualizacion
+3001,Cepillo de bambú,Higiene,False,12000,150,2025-10-10
+3002,Pasta dental ecológica,Higiene,False,18000,200,2025-10-10
+3003,Toalla orgánica,Hogar,False,25000,80,2025-10-10
+3004,Botella ecológica,Hogar,True,35000,120,2025-10-10
+3005,Bolsas reutilizables,Hogar,True,10000,500,2025-10-10
+3006,Detergente natural,Limpieza,False,22000,90,2025-10-10
+3007,Jabón orgánico,Higiene,False,15000,300,2025-10-10
+3008,Desodorante ecológico,Higiene,False,20000,250,2025-10-10
+3009,Esponja vegetal,Higiene,False,8000,600,2025-10-10
+3010,Shampoo sólido,Higiene,False,23000,180,2025-10-10
+3011,Acondicionador sólido,Higiene,False,25000,160,2025-10-10
+3012,Crema hidratante natural,Higiene,False,28000,140,2025-10-10
+3013,Hilo dental natural,Higiene,False,12000,300,2025-10-10
+3014,Bálsamo labial ecológico,Higiene,False,15000,200,2025-10-10
+3015,Toallas de algodón orgánico,Hogar,False,30000,100,2025-10-10
+3016,Paquete de pajillas reutilizables,Hogar,True,18000,400,2025-10-10
+3017,Set de limpieza ecológica,Limpieza,False,35000,90,2025-10-10
+3018,Kit de aseo sostenible,Higiene,True,40000,110,2025-10-10
+3019,Desinfectante natural,Limpieza,False,22000,200,2025-10-10
+3020,Toalla ecológica,Hogar,True,28000,120,2025-10-10
+3021,"Libro: Inteligencia Artificial Básica",Libros,True,60000,50,2025-10-10
+3022,Silla ergonómica de oficina,Muebles,True,450000,20,2025-10-10
+3023,Proteína en polvo 1kg (sellada),Suplementos,True,120000,75,2025-10-10
+3024,Mascarilla facial desechable,Higiene,False,2000,1000,2025-10-10
