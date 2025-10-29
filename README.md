@@ -172,26 +172,26 @@ La lógica conversacional está implementada en [`agente_ecomarket.py`](agente_e
 
 ```mermaid
 flowchart TD
-    A[Inicio de mensaje] --> B{¿Incluye ID de pedido<br/>P-XXXX o nro_id?}
-    B -- No --> C[Responder con saludo y solicitar referencia<br/>sin usar herramientas]
-    C --> Z[Fin del turno]
-    B -- Sí --> D[Llamar verificar_elegibilidad_devolucion()<br/>herramientas_ecomarket]
-    D --> E{¿Pedido elegible?}
-    E -- No --> F[Responder motivo y cerrar flujo]
-    F --> Z
-    E -- Sí --> G[Guardar id_devolucion en memoria<br/>EcomarketMemory.start_confirm]
-    G --> H[Pedir confirmación (sí/no)]
-    H --> I{Respuesta del usuario}
-    I -- "sí" --> J[Llamar generar_etiqueta_devolucion()<br/>y procesar_reembolso()]
-    J --> K[Enviar etiqueta + confirmación de reembolso]
-    I -- "no" --> L[Restablecer memoria y confirmar cancelación]
-    I -- Otro --> M[Repetir solicitud de confirmación]
-    K --> Z
-    L --> Z
-    M --> H
-    H --> N{¿Llegan preguntas informativas y<br/>no hay confirmación pendiente?}
-    N -- Sí --> O[Llamar consultar_conocimiento_rag()<br/>para responder con contexto]
-    O --> Z
+    A[Inicio de mensaje] --> B{¿Incluye ID de pedido<br/>P-XXXX o nro_id?};
+    B -- No --> C[Responder con saludo y solicitar referencia<br/>sin usar herramientas];
+    C --> Z[Fin del turno];
+    B -- Sí --> D[Llamar verificar_elegibilidad_devolucion()<br/>herramientas_ecomarket];
+    D --> E{¿Pedido elegible?};
+    E -- No --> F[Responder motivo y cerrar flujo];
+    F --> Z;
+    E -- Sí --> G[Guardar id_devolucion en memoria<br/>EcomarketMemory.start_confirm];
+    G --> H[Pedir confirmación (sí/no)];
+    H --> I{Respuesta del usuario};
+    I -- "sí" --> J[Llamar generar_etiqueta_devolucion()<br/>y procesar_reembolso()];
+    J --> K[Enviar etiqueta + confirmación de reembolso];
+    I -- "no" --> L[Restablecer memoria y confirmar cancelación];
+    I -- Otro --> M[Repetir solicitud de confirmación];
+    K --> Z;
+    L --> Z;
+    M --> H;
+    H --> N{¿Llegan preguntas informativas y<br/>no hay confirmación pendiente?};
+    N -- Sí --> O[Llamar consultar_conocimiento_rag()<br/>para responder con contexto];
+    O --> Z;
 ```
 
 **Puntos clave del flujo:**
