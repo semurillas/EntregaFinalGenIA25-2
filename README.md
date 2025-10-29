@@ -169,6 +169,7 @@ Se seleccionó **LangChain** porque:
 
 La lógica conversacional está implementada en [`agente_ecomarket.py`](agente_ecomarket.py) y se apoya en las herramientas definidas en [`herramientas_ecomarket.py`](herramientas_ecomarket.py). El siguiente diagrama resume las decisiones principales del agente y cuándo invoca cada herramienta:
 
+
 ```mermaid
 flowchart TD
     A[Inicio de mensaje] --> B{¿Incluye ID de pedido<br/>P-XXXX o nro_id?}
