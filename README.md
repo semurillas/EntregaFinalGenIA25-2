@@ -171,44 +171,50 @@ La lógica conversacional está implementada en [`agente_ecomarket.py`](agente_e
 
 
 ```mermaid
-%% Estilo ECO-MARKET ♻️
 flowchart TD
-
+%% --- DEFINICIÓN DE CLASES (ESTILOS) ---
 classDef start fill:#7CCF83,stroke:#2D7A3F,color:#ffffff,font-weight:bold;
 classDef action fill:#EAF8EC,stroke:#2D7A3F,color:#2D7A3F;
 classDef decision fill:#FFF8D6,stroke:#B89500,color:#5C4B00,font-weight:bold;
 classDef end fill:#D9E4DD,stroke:#6C8373,color:#2D3F35,font-weight:bold;
 
-A[Inicio de mensaje]:::start --> B{¿Incluye referencia?<br/>ID P-XXXX o nro_id}:::decision
+%% --- FLUJO PRINCIPAL ---
+A[Inicio de mensaje] --> B{¿Incluye referencia?\nID P-XXXX o nro_id}
 
-B -- No --> C[Responder saludo y pedir referencia]:::action
-C --> Z[Fin del turno]:::end
+B -- No --> C[Responder saludo y pedir referencia]
+C --> Z[Fin del turno]
 
-B -- Sí --> D[Tool: verificar_elegibilidad_devolucion()]:::action
-D --> E{¿Pedido elegible?}:::decision
+B -- Sí --> D[Llamar verificar_elegibilidad_devolucion()]
+D --> E{¿Pedido elegible?}
 
-E -- No --> F[Notificar razón y cerrar flujo]:::action
+E -- No --> F[Notificar motivo y cerrar flujo]
 F --> Z
 
-E -- Sí --> G[Guardar id_devolucion en memoria]:::action
-G --> H[Pedir confirmación (sí/no)]:::action
+E -- Sí --> G[Guardar id_devolucion en memoria]
+G --> H[Pedir confirmación (sí/no)]
 
-H --> I{Respuesta del usuario}:::decision
+H --> I{Respuesta del usuario}
 
-I -- sí --> J[Tool: generar_etiqueta_devolucion()\n+ procesar_reembolso()]:::action
-J --> K[Enviar etiqueta y confirmación]:::action
+I -- sí --> J[Llamar generar_etiqueta_devolucion()\n+ procesar_reembolso()]
+J --> K[Enviar etiqueta + confirmación]
 K --> Z
 
-I -- no --> L[Cancelar devolución y limpiar memoria]:::action
+I -- no --> L[Cancelar devolución y limpiar memoria]
 L --> Z
 
-I -- Otra --> M[Repetir solicitud de confirmación]:::action
+I -- Otra --> M[Repetir solicitud de confirmación]
 M --> H
 
-%% Consultas generales fuera del flujo de devolución
-A --> N{¿No se está procesando una devolución?}:::decision
-N -- Sí --> O[Tool: consultar_conocimiento_rag()]:::action
+%% --- CONSULTAS GENERALES (FUERA DE DEVOLUCIÓN) ---
+A --> N{¿Flujo de devolución activo?}
+N -- No --> O[Llamar consultar_conocimiento_rag()]
 O --> Z
+
+%% --- ASIGNACIÓN DE ESTILOS ---
+class A start
+class Z end
+class B,E,I,N decision
+class C,D,F,G,H,J,K,L,M,O action
 ```
 
 **Puntos clave del flujo:**
