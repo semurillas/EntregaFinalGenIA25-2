@@ -208,3 +208,58 @@ O --> Z
 - Ante una confirmación positiva, se ejecutan en cadena `generar_etiqueta_devolucion()` y `procesar_reembolso()` para entregar la etiqueta simulada y notificar el reembolso. Un "no" cancela la operación y restablece la memoria.
 - Si el usuario realiza preguntas informativas y no hay una devolución pendiente, el agente consulta la base de conocimiento mediante RAG para complementar sus respuestas.
 
+## ✨ Fase 3: Análisis Crítico y Propuestas de Mejora
+
+En esta fase se evaluaron los aspectos de seguridad, ética y sostenibilidad de la solución, así como posibles líneas de evolución del agente desarrollado.
+
+---
+
+### 1. 🔐 Seguridad y Ética
+
+La capacidad del agente para ejecutar acciones reales (como generar etiquetas de devolución o iniciar reembolsos) introduce riesgos que deben gestionarse cuidadosamente. Es fundamental asegurar que el agente **interprete correctamente la intención del usuario** antes de ejecutar cualquier acción automática.
+
+Para reducir riesgos y garantizar un uso responsable del sistema, proponemos:
+
+- **Validación de contexto e intención** antes de cualquier acción.
+- **Controles de acceso y autenticación** para limitar quién puede activar funciones críticas.
+- **Registro de auditoría** para asegurar trazabilidad de decisiones y acciones.
+- **Evitar automatizar operaciones de alto impacto** (financieras o sobre datos personales) sin supervisión humana.
+- **Cumplimiento de normativas de protección de datos** como Habeas Data (Colombia) o GDPR (Europa), garantizando el uso responsable de información personal.
+
+Estos mecanismos contribuyen a la transparencia, explicabilidad y responsabilidad en el uso del agente.
+
+---
+
+### 2. 🩺 Monitoreo y Observabilidad
+
+Para garantizar que el agente opere de manera confiable, es necesario implementar un sistema de monitoreo continuo. Este permitirá detectar fallos y mejorar el rendimiento del sistema con el tiempo.
+
+Se propone:
+
+- **Logging estructurado** de consultas, decisiones, herramientas invocadas y errores.
+- **Dashboards de monitoreo** para visualizar métricas clave en tiempo real.
+- **Alertas automáticas** ante fallos recurrentes o respuestas anómalas.
+- Herramientas recomendadas: **LangWatch**, **Helicone** o **OpenDevin Monitor**.
+
+Esto facilita la **detección temprana de problemas** y el ajuste progresivo del comportamiento del agente.
+
+---
+
+### 3. 🚀 Propuestas de Mejora
+
+El agente puede evolucionar para cubrir más etapas del proceso de servicio y aumentar su autonomía:
+
+| Mejora Propuesta | Descripción | Beneficio |
+|------------------|-------------|-----------|
+| **Agente de reemplazos** | Permite gestionar reemplazos automáticamente tras una devolución. | Reduce fricción y mejora experiencia del cliente. |
+| **Integración con CRM** | Registra interacciones y actualiza datos del cliente automáticamente. | Favorece consistencia y sincronización de sistemas. |
+| **Aprendizaje continuo** | Ajusta la base de conocimiento en función de preguntas frecuentes. | Hace el sistema más útil con el tiempo. |
+| **Human-in-the-loop** | Intervención manual en decisiones de mayor impacto. | Aumenta seguridad y control en operaciones críticas. |
+
+---
+
+### ✅ Conclusión
+
+La solución demuestra cómo un agente de IA puede **automatizar procesos reales** manteniendo un equilibrio entre eficiencia, seguridad y experiencia de usuario. Las propuestas de mejora permiten una evolución hacia sistemas más adaptativos, confiables y éticamente responsables.
+
+---
