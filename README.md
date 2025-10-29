@@ -172,45 +172,41 @@ La lógica conversacional está implementada en [`agente_ecomarket.py`](agente_e
 
 ```mermaid
 flowchart TD
-%% --- DEFINICIÓN DE CLASES (ESTILOS) ---
-classDef start fill:#7CCF83,stroke:#2D7A3F,color:#ffffff,font-weight:bold;
-classDef action fill:#EAF8EC,stroke:#2D7A3F,color:#2D7A3F;
-classDef decision fill:#FFF8D6,stroke:#B89500,color:#5C4B00,font-weight:bold;
-classDef end fill:#D9E4DD,stroke:#6C8373,color:#2D3F35,font-weight:bold;
-
-%% --- FLUJO PRINCIPAL ---
-A[Inicio de mensaje] --> B{¿Incluye referencia?\nID P-XXXX o nro_id}
-
-B -- No --> C[Responder saludo y pedir referencia]
+A[Inicio de mensaje] --> B{¿Incluye referencia?}
+B -- No --> C[Solicitar número de pedido o identificación]
 C --> Z[Fin del turno]
 
-B -- Sí --> D[Llamar verificar_elegibilidad_devolucion()]
+B -- Sí --> D[verificar_elegibilidad_devolucion()]
 D --> E{¿Pedido elegible?}
 
 E -- No --> F[Notificar motivo y cerrar flujo]
 F --> Z
 
 E -- Sí --> G[Guardar id_devolucion en memoria]
-G --> H[Pedir confirmación (sí/no)]
+G --> H[Solicitar confirmación (sí/no)]
 
 H --> I{Respuesta del usuario}
 
-I -- sí --> J[Llamar generar_etiqueta_devolucion()\n+ procesar_reembolso()]
-J --> K[Enviar etiqueta + confirmación]
+I -- sí --> J[generar_etiqueta_devolucion() y procesar_reembolso()]
+J --> K[Confirmar devolución completada]
 K --> Z
 
 I -- no --> L[Cancelar devolución y limpiar memoria]
 L --> Z
 
-I -- Otra --> M[Repetir solicitud de confirmación]
+I -- otro --> M[Repetir solicitud de confirmación]
 M --> H
 
-%% --- CONSULTAS GENERALES (FUERA DE DEVOLUCIÓN) ---
-A --> N{¿Flujo de devolución activo?}
-N -- No --> O[Llamar consultar_conocimiento_rag()]
+A --> N{¿Está activo el flujo de devolución?}
+N -- No --> O[consultar_conocimiento_rag()]
 O --> Z
 
-%% --- ASIGNACIÓN DE ESTILOS ---
+%% Estilos
+classDef start fill:#6ECB63,stroke:#2D7A3F,color:#ffffff,font-weight:bold;
+classDef decision fill:#F7EFAF,stroke:#B89500,color:#5C4B00,font-weight:bold;
+classDef action fill:#EAF8EC,stroke:#2D7A3F,color:#2D7A3F;
+classDef end fill:#D9E4DD,stroke:#6C8373,color:#2D3F35,font-weight:bold;
+
 class A start
 class Z end
 class B,E,I,N decision
