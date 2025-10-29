@@ -1,9 +1,11 @@
-# 🤖 EcoMarket - Sistema de Agente Inteligente para Devoluciones
+# 🤖 EcoMarket - Sistema de Agente Inteligente para Consultas y Devoluciones
 
 Este proyecto implementa un asistente inteligente capaz de **gestionar devoluciones de pedidos** dentro del entorno de EcoMarket.  
-El agente utiliza un modelo conversacional y herramientas simuladas para verificar si un pedido es elegible para devolución, generar la etiqueta de envío y procesar el reembolso.
+El agente utiliza un modelo conversacional y herramientas simuladas para verificar si un pedido es elegible para devolución, generar la etiqueta de envío y procesar el reembolso. Y adicional, permite que el cliente o usuario haga consultas generales que son respondidas usando la base datos RAG que se ha preparado con documentos de la compañia EcoMarket.
 
 ---
+
+# Fase I. Diseño de la Arquitectura del Agente.
 
 ## 🧰 Herramientas del Agente (Tools)
 
