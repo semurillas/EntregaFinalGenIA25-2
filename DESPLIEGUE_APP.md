@@ -17,6 +17,8 @@
 
 <h3>📅 Fecha: Octubre 28, 2025</h3>
 
+<h1>📚 Despliegue de la Aplicación</h1>
+
 ## Arquitectura
 - **Frontend:** [`app_ecomarket.py`](app_ecomarket.py) implementa la interfaz en Streamlit.
 - **Agente conversacional:** [`agente_ecomarket.py`](agente_ecomarket.py) inicializa el agente, herramientas de negocio y RAG.
