@@ -1,6 +1,21 @@
-# EcoMarket – Entrega Final GenIA 2025-2
+<h1> <img width="207" height="112" alt="image" src="https://github.com/user-attachments/assets/89fd906b-04fb-4d4f-b5e6-8375083a8a01" /></h1>
+<h1>📚 Maestría en Inteligencia Artificial Aplicada – 3er Semestre</h1>
 
-Asistente inteligente para gestionar devoluciones y consultas de la tienda EcoMarket. El proyecto combina un agente conversacional de LangChain, un flujo de negocio simulado y un módulo RAG (Retrieval Augmented Generation) que consulta políticas, términos y preguntas frecuentes.
+<h3>Asignatura: Inteligencia Artificial Generativa</h3>
+
+<h3>Taller Final</h3>
+
+<hr style="width:60%;">
+
+<h3>👨‍🎓 Estudiantes</h3>
+<ul style="list-style:none; padding:0; font-size:18px;">
+    <li>Sebastián Murillas</li>
+    <li>Octavio Guerra</li>
+</ul>
+
+<hr style="width:60%;">
+
+<h3>📅 Fecha: Octubre 28, 2025</h3>
 
 ## Arquitectura
 - **Frontend:** [`app_ecomarket.py`](app_ecomarket.py) implementa la interfaz en Streamlit.
