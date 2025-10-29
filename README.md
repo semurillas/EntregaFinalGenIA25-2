@@ -200,6 +200,7 @@ M --> H
 A --> N{Flujo de devolucion activo?}
 N -- No --> O[Llamar consultar_conocimiento_rag]
 O --> Z
+
 %% Estilos
 classDef start fill:#6ECB63,stroke:#2D7A3F,color:#ffffff,font-weight:bold;
 classDef decision fill:#F7EFAF,stroke:#B89500,color:#5C4B00,font-weight:bold;
