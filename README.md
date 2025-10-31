@@ -253,16 +253,9 @@ Estos mecanismos contribuyen a la transparencia, explicabilidad y responsabilida
 
 ### 2. 🩺 Monitoreo y Observabilidad
 
-Para garantizar que el agente opere de manera confiable, es necesario implementar un sistema de monitoreo continuo. Este permitirá detectar fallos y mejorar el rendimiento del sistema con el tiempo.
-
-Se propone:
-
-- **Logging estructurado** de consultas, decisiones, herramientas invocadas y errores.
-- **Dashboards de monitoreo** para visualizar métricas clave en tiempo real.
-- **Alertas automáticas** ante fallos recurrentes o respuestas anómalas.
-- Herramientas recomendadas: **LangWatch**, **Helicone** o **OpenDevin Monitor**.
-
-Esto facilita la **detección temprana de problemas** y el ajuste progresivo del comportamiento del agente.
+El monitoreo de agentes autónomos requiere mecanismos que permitan auditar y diagnosticar su comportamiento. Para esto, herramientas especializadas como LangWatch, Helicone o OpenDevin Monitor ofrecen funcionalidades para registrar conversaciones, medir tiempos de respuesta, analizar patrones de uso y detectar desviaciones en las acciones del agente.
+Se recomienda integrar un sistema de logging estructurado, donde se almacenen métricas clave (intenciones detectadas, herramientas invocadas, errores, resultados) y un tablero de control que facilite la visualización del rendimiento del sistema en tiempo real.
+Adicionalmente, la implementación de alertas automáticas (por ejemplo, cuando el agente falla repetidamente en una tarea o genera respuestas incoherentes) permite una rápida detección y corrección de anomalías, mejorando la confiabilidad general del sistema.
 
 ---
 
