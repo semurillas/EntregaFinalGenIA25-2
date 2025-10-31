@@ -253,9 +253,18 @@ Estos mecanismos contribuyen a la transparencia, explicabilidad y responsabilida
 
 ### 2. 🩺 Monitoreo y Observabilidad
 
-El monitoreo de agentes autónomos requiere mecanismos que permitan auditar y diagnosticar su comportamiento. Para esto, herramientas especializadas como LangWatch, Helicone o OpenDevin Monitor ofrecen funcionalidades para registrar conversaciones, medir tiempos de respuesta, analizar patrones de uso y detectar desviaciones en las acciones del agente.
-Se recomienda integrar un sistema de logging estructurado, donde se almacenen métricas clave (intenciones detectadas, herramientas invocadas, errores, resultados) y un tablero de control que facilite la visualización del rendimiento del sistema en tiempo real.
-Adicionalmente, la implementación de alertas automáticas (por ejemplo, cuando el agente falla repetidamente en una tarea o genera respuestas incoherentes) permite una rápida detección y corrección de anomalías, mejorando la confiabilidad general del sistema.
+Dado que el agente combina razonamiento semántico (RAG) con ejecución de herramientas externas, resulta fundamental contar con un sistema de monitoreo que permita observar su comportamiento en tiempo real.
+Para ello, podrían integrarse herramientas especializadas como LangWatch, LangFuse o Helicone, que permiten:
+
+Registrar todas las interacciones con el modelo, incluyendo prompts, respuestas, tiempo de ejecución y uso de Tools.
+
+Analizar métricas de rendimiento, como latencia, frecuencia de errores o llamadas a cada Tool.
+
+Auditar el razonamiento del agente (pensamientos, acciones y observaciones), lo que facilita depuración y mejora continua.
+
+Configurar alertas automáticas en caso de fallos recurrentes, respuestas incoherentes o comportamientos fuera de lo esperado.
+
+El monitoreo no solo aumenta la confiabilidad técnica del sistema, sino que también refuerza su transparencia y responsabilidad operativa, aspectos esenciales en agentes que interactúan con datos sensibles o procesos reales de la empresa.
 
 ---
 
